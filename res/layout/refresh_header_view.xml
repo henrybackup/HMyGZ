@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_refresh_header_view_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/ll_refresh_header_view_pull_down"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp" >
+
+            <ImageView
+                android:id="@+id/iv_refresh_header_view_pull_down_arrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/common_listview_headview_red_arrow" />
+
+            <ProgressBar
+                android:id="@+id/pb_refresh_header_view_pull_down"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:indeterminateDrawable="@drawable/custom_progressbar"
+                android:layout_gravity="center" 
+                />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv_refresh_header_view_pull_down_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="下拉刷新"
+                android:textColor="#FF0000"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_refresh_header_view_pull_down_last_update_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="最后刷新时间:2015.09-08 10:50:40"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
