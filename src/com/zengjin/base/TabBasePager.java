@@ -25,6 +25,7 @@ public class TabBasePager {
 	public ImageButton ibMenu;
 	public FrameLayout flContent;
 	private View rootView;
+	public ImageButton ibListOrGrid;
 
 
 	public TabBasePager(Context context) {
@@ -37,6 +38,8 @@ public class TabBasePager {
 View view = View.inflate(mContext, R.layout.tab_base_pager, null);
 tvTitle = (TextView) view.findViewById(R.id.tv_title_bar_title);
 ibMenu = (ImageButton) view.findViewById(R.id.ib_title_bar_menu);
+ibListOrGrid = (ImageButton) view.findViewById(R.id.ib_title_bar_list_or_gird);
+
 flContent = (FrameLayout) view.findViewById(R.id.fl_tab_pager_content);
 		return view;
 	}

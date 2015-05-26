@@ -46,6 +46,8 @@ public class RefreshListView extends ListView implements OnScrollListener {
 	private View mFooterView; // 脚布局对象
 	private int mFooterViewHeight; // 脚布局的高度
 	private boolean isLoadingMore = false; // 是否正在加载更多中, 默认为: false
+	private boolean isEnabledPullDown= false;
+	private boolean isEnabledLoadingMore=false;
 
 	public RefreshListView(Context context) {
 		super(context);
@@ -143,6 +145,10 @@ public class RefreshListView extends ListView implements OnScrollListener {
 			if(downY == -1) {
 				downY = (int) ev.getY();
 			}
+			if (!isEnabledPullDown) {
+				break;
+			}
+			
 			
 			if(currentState == REFRESHING) {
 				// 当前正在刷新中, 跳出switch
@@ -316,6 +322,11 @@ public class RefreshListView extends ListView implements OnScrollListener {
 	 */
 	@Override
 	public void onScrollStateChanged(AbsListView view, int scrollState) {
+		if (!isEnabledLoadingMore) {
+			return;
+		}
+		
+		
 		if(scrollState == SCROLL_STATE_IDLE 
 				|| scrollState == SCROLL_STATE_FLING) {
 			int lastVisiblePosition = getLastVisiblePosition();
@@ -345,5 +356,25 @@ public class RefreshListView extends ListView implements OnScrollListener {
 			int visibleItemCount, int totalItemCount) {
 		
 	}
+	/**
+	 * @param isEnabled
+	 * 是否启用下拉刷新内容
+	 */
+	public void isEnabledPullDownRefresh(boolean isEnabled){
+		isEnabledPullDown = isEnabled;
+		
+	}
+
+	/**
+	 * @param b
+	 *  是否启用加载更多内容
+	 * 
+	 */
+	public void isEnabledLoadingMore(boolean isEnabled) {
+		isEnabledLoadingMore = isEnabled;
+		
+	}
+	
+	
 	
 }

@@ -19,8 +19,17 @@ public class NewsCenterBean {
 		public String dayurl;
 		public String excurl;
 		public String weekurl;
+		@Override
+		public String toString() {
+			return "NewsCenterData [children=" + children + ", id=" + id
+					+ ", title=" + title + ", type=" + type + ", url=" + url
+					+ ", url1=" + url1 + ", dayurl=" + dayurl + ", excurl="
+					+ excurl + ", weekurl=" + weekurl + "]";
+		}
+		
 		
 	}
+	
 	public class ChildRen{
 		
 		public int id;

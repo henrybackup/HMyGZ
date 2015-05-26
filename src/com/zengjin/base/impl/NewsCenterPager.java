@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -104,7 +105,7 @@ public class NewsCenterPager extends TabBasePager {
 			pagerList = new ArrayList<MenuDetailBasePager>();
 		pagerList.add(new NewsMenuDetailPager(mContext,bean.data.get(0)));
 		pagerList.add(new TopicMenuDetailPager(mContext));
-		pagerList.add(new PhotosMenuDetailPager(mContext));
+		pagerList.add(new PhotosMenuDetailPager(mContext,bean.data.get(2)));
 		pagerList.add(new InteractMenuDetailPager(mContext));
 		
 		leftMenuDataList = bean.data;
@@ -120,7 +121,7 @@ public class NewsCenterPager extends TabBasePager {
 	 */
 
 	public void switchCurrentPager(int position) {
-		MenuDetailBasePager pager = pagerList.get(position);
+		 final MenuDetailBasePager pager = pagerList.get(position);
 		// 把pager中的view对象添加到framlayout中
 		View view = pager.getRootView();
 
@@ -131,5 +132,20 @@ public class NewsCenterPager extends TabBasePager {
 		tvTitle.setText(leftMenuDataList.get(position).title);
 		// 初始化当天pager数据
 		pager.initData();
+		if (position==2) {
+			 ibListOrGrid.setVisibility(View.VISIBLE);
+			 ibListOrGrid.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+				PhotosMenuDetailPager photosPager=(PhotosMenuDetailPager)pager;
+					photosPager.switchCurrentPager(ibListOrGrid);
+			
+				}
+			});
+		}else {
+			 ibListOrGrid.setVisibility(View.GONE);
+		}
+		
 	}
 }

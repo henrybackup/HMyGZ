@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ListView
+        android:id="@+id/lv_photos"
+        android:layout_width="match_parent"
+        android:cacheColorHint="@android:color/transparent"
+        android:dividerHeight="0dp"
+        android:divider="@null"
+        android:layout_height="match_parent" >
+    </ListView>
+
+    <GridView
+        android:id="@+id/gv_photos"
+           android:cacheColorHint="@android:color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="2"
+        android:visibility="gone" >
+    </GridView>
+
+</RelativeLayout>

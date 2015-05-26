@@ -11,5 +11,6 @@ public class Constants {
  */
 public static final String SERVICE_URL="http://192.168.1.101:8080/zhbj";
 public static String NEWSCENTER_URL=SERVICE_URL+"/categories.json";
-
+//组图地址
+public static String PHOTOS_URL=SERVICE_URL+"/photos/photos_1.json";
 }
