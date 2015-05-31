@@ -39,7 +39,7 @@ public class GuideUI extends Activity implements OnClickListener {
 		mViewPager.setAdapter(guideAdaper);
 	btStartExperience.setOnClickListener(this);
 		mViewPager.setOnPageChangeListener(new OnPageChangeListener() {
-	//当页面被选中时		
+	//当页面被选中时		 a
 			@Override
 			public void onPageSelected(int position) {
 			llPointGroup.getChildAt(position).setEnabled(true);

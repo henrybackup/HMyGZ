@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.Window;
 
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
@@ -39,7 +40,10 @@ private final String MAIN_MENU_FRAGMENT_TAG="main_menu";
 		DisplayMetrics displayMetrics = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
 		int mywidth = displayMetrics.widthPixels;
-
+//较简便的写法：
+//		Display display = getWindowManager().getDefaultDisplay();
+//		int displaywidth=display.getWidth();
+		
 		slidingMenu.setBehindOffset(mywidth * 5/8);
 
 		CacheUtils.putBoolean(this, WelcomeUI.IS_OPEN_MAIN_PAGE, true);
